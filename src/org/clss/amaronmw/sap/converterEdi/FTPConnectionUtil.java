@@ -17,24 +17,24 @@ public class FTPConnectionUtil {
         FileInputStream fis = null;
   
         try {
-			client.connect("192.168.1.228 ");
+			client.connect("192.168.1.228");
 			client.login("devopssudo@outlook.com", "Samsung@123");
 			
 			boolean isConnected = client.sendNoOp();
 			
 			if(isConnected) {
 				System.out.println("FTP Server connection is established");
+				// Create an InputStream of the file to be uploaded
+				String filename = "sample.edi";
+				fis = new FileInputStream(filePath);
+				
+				// Store file on server and logout
+				client.storeFile(filename, fis);
+				client.logout();
 			}else{
 				System.out.println("FTP Server connection failed");
 			}
 	 
-			// Create an InputStream of the file to be uploaded
-			String filename = "sample.edi";
-			fis = new FileInputStream(filePath);
-			
-			// Store file on server and logout
-			client.storeFile(filename, fis);
-			client.logout();
         } catch (IOException e) {
         	e.printStackTrace();
         } finally {
