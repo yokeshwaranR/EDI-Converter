@@ -96,7 +96,6 @@ public class ServerRequestHandler extends JCO.Server
                 logger.writeLogInfo("row count "+disco.getNumRows());
                 disco.writeHTML("/home/clss/Documents/idoc_table.html");
                 function.writeHTML("/home/clss/Documents/idoc.html");
-                function.writeXML("/home/clss/Documents/idoc_r.xml");
                 //output.setValue(firstRecord,"RFCFLOAT");
                 System.out.println(disco.getString("DOCNUM"));
                 JCO.Table data40 = tables.getTable("IDOC_DATA_REC_40");
