@@ -8,11 +8,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import inedi.Ediwriter;
 import inx12.X12writer;
 
 public class FileUploadUtil {
 	
-	public String ediFileWrite(X12writer ediWriter) {
+	public String ediFileWrite(Ediwriter ediWriter) {
 		
 		FileOutputStream fos = null;
 	    File file;
